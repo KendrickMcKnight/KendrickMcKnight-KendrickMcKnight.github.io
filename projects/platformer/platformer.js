@@ -20,7 +20,6 @@ $(function () {
     createPlatform(-50, canvas.height - 10, canvas.width + 100, 200); //right
     createPlatform(-50, -50, 50, canvas.height + 500); //bottom
     createPlatform(canvas.width, -50, 50, canvas.height + 100);
-
     /**
      * Uncomment the loops below to add a "grid" to your platformer game's screen
      * The grid will place both horizontal and vertical platforms incremented 100 pixels apart
@@ -43,6 +42,16 @@ $(function () {
     // Create platforms
     // You must decide the x position, y position, width, and height of the platforms
     // example usage: createPlatform(x,y,width,height)
+    createPlatform(0, 200, 1200, 5);
+    createPlatform(500, 500, 1000, 5);
+    createPlatform(0, 350, 200, 5);
+    createPlatform(200, 450, 200, 5);
+    createPlatform(1250, 650, 200, 5);
+
+
+
+
+
 
 
 
@@ -52,7 +61,11 @@ $(function () {
     // You must decide on the collectable type, the x position, the y position, the gravity, and the bounce strength
     // Your collectable choices are 'database' 'diamond' 'grace' 'kennedi' 'max' and 'steve'; more can be added if you wish
     // example usage: createCollectable(type, x, y, gravity, bounce)
-
+    createCollectable("steve", 60, 270,);
+    createCollectable("grace", 1250, 600,);
+    createCollectable("diamond", 800, 670,);
+    createCollectable("database", 1150, 100)
+    
 
 
 
@@ -62,7 +75,9 @@ $(function () {
     // Your wall choices are: 'top' 'left' 'right' and 'bottom'
     // example usage: createCannon(side, position, delay, width, height)
 
-
+    createCannon("right", 200, 1000);
+    createCannon("left", 420, 1000);
+    createCannon("right", 760, 1000);
 
 
     /////////////////////////////////////////////////
