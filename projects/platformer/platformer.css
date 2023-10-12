@@ -4,9 +4,10 @@ body {
 }
 
 canvas {
+  background-image:url("://cdn.wallpapersafari.com/23/77/DP60WY.jpeg");
+
 }
 
 img {
   display: none;
-  background-image:url("://cdn.wallpapersafari.com/23/77/DP60WY.jpeg")
 }
