@@ -6,8 +6,8 @@
 	<script src="jquery.min.js"></script>
 	<style>
 		.box {
-			width: 200px;
-			height: 200px;
+			width: 70px;
+			height: 70px;
 			background-color: teal;
 			font-size: 300%;
 			text-align: center;
@@ -46,6 +46,7 @@
 			
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
 			box.on('click', handleBoxClick);
+			
 
 			// moves the Box to a new position on the screen along the X-Axis
 			function moveBoxTo(newPositionX) {
@@ -63,6 +64,8 @@
 			
 			// TODO 2 - Variable declarations 
 			var positionX = 0;
+			var points = 0;
+			var speed = 10;
 
 			
 			/* 
@@ -71,11 +74,14 @@
 			turn it around! 
 			*/
 			function update (){
-				positionX = positionX + 10;
+				positionX = positionX + speed;
 				
 				moveBoxTo(positionX)
-
+				if (conditionIsTrue) {
+     speed = -speed;
+}
 			};
+		
 
 			/* 
 			This Function will be called each time the box is clicked. Each time it is called,
@@ -83,7 +89,12 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				
+				speed = speed + 3;
+   positionX = 0;
+   points = points + 1;
+   changeBoxText(points)
+
+
 
 
 			};
