@@ -5,6 +5,10 @@
 	<title>Bouncing Box</title>
 	<script src="jquery.min.js"></script>
 	<style>
+		body {
+ background-image: url("https://miro.medium.com/v2/resize:fit:1358/0*P1gnMvkRRoIUD_gO.jpg");
+ background-color: #cccccc;
+}
 		.box {
 			width: 70px;
 			height: 70px;
@@ -25,6 +29,7 @@
 
 </head>
 <body class="board">
+	
 	<!-- HTML for the box -->
 	<div class="box">?</div>
 
@@ -49,9 +54,10 @@
 			
 
 			// moves the Box to a new position on the screen along the X-Axis
-			function moveBoxTo(newPositionX) {
-				box.css("left", newPositionX);
-			}
+			function moveBoxTo(newPositionX, newPositionY) {
+      box.css('left', newPositionX);
+      box.css('top', newPositionY);
+  }
 
 			// changes the text displayed on the Box
 			function changeBoxText(newText) {
@@ -66,7 +72,9 @@
 			var positionX = 0;
 			var points = 0;
 			var speed = 10;
-
+			var positionY = 0;
+var speedY;
+var boardHeight = jQuery(window).height(); 
 			
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
@@ -76,8 +84,11 @@
 			function update (){
 				positionX = positionX + speed;
 				
-				moveBoxTo(positionX)
-				if (conditionIsTrue) {
+				moveBoxTo(positionX, positionY);
+				if (positionX > boardWidth) {
+     speed = -speed;
+}
+if (positionX < 0) {
      speed = -speed;
 }
 			};
@@ -89,7 +100,12 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				speed = speed + 3;
+				if (speed > 0){
+					speed = speed + 3;
+				}
+else if (speed < 0){
+	speed = speed - 3;
+}
    positionX = 0;
    points = points + 1;
    changeBoxText(points)
